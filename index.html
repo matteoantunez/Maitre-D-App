@@ -11,10 +11,12 @@
     <h1>Maitre D</h1>
     <main>
 
+        <form id="calc_tip" action="">
+
         <section class = "total">
             <fieldset>
                 <label for="calc_total">
-                    total
+                    Total
                 </label>
                 <input id="calc_total" type="text" name="total_num">
 
@@ -22,6 +24,7 @@
         </section>
 
         <section class = "tip_rate">
+            <br>
             Tip 
 
             <filedset>
@@ -30,9 +33,10 @@
                 </label>
                 <input id="calc_tip" type="text" name="tip_rate">
             </filedset>
-
-            <br />Tax
-            <br /> Grand Total
+        </section>
+        <section>
+            <br />Tax <td id="tax"> </td>
+            <br /> Grand Total <td id="gtotal"></td>
 
         </section>
 
@@ -40,16 +44,33 @@
             <input type="submit" value="Calculate">
         </section>
 
+        </form>
+
     </main>
 
     <footer>
 
     </footer>
     <script src="main.js">
+        window.onload=function() {
+            total_num = document.getElementById('total_num');
+            tip_rate = document.getElementById('tip_rate');
+            document.getElementById('Calculate').onclick = calcTip;
+            document.getElementById('Calculate').onclick = calcTotal;
+        }
+        function calcTip() {
+            var total = new Number(total_num.value);
+            var rtip = new Number(tip_rate.value);
+            str.innerHTML = '';
+            str.innerHTML = total * rtip;
+        }
+
         function calcTotal() {
-            var total = document.getElemendById("total_num").value;
-            var total = document.getElementByID("tip_rate").value;
-            
+            var total = new Number(total_num.value);
+            var rtip = new Number(tip_rate.value);
+            str.innerHTML = '';
+            tip = total * rtip;
+            str.innerHTML = tip + total;
         }
     </script>
 </body>
