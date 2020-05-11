@@ -7,72 +7,24 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    <h1>Maitre D</h1>
-    <main>
+    <h1>App Challenge (Module 4)</h1>
 
-        <form id="calc_tip" action="">
-
-        <section class = "total">
-            <fieldset>
-                <label for="calc_total">
-                    Total
-                </label>
-                <input id="calc_total" type="text" name="total_num">
-
-            </fieldset>
-        </section>
-
-        <section class = "tip_rate">
-            <br>
-            Tip 
-
-            <filedset>
-                <label for="calc_tip">
-                    Rate
-                </label>
-                <input id="calc_tip" type="text" name="tip_rate">
-            </filedset>
-        </section>
-        <section>
-            <br />Tax <td id="tax"> </td>
-            <br /> Grand Total <td id="gtotal"></td>
-
-        </section>
-
-        <section class = "grand_total">
-            <input type="submit" value="Calculate">
-        </section>
-
-        </form>
-
-    </main>
+    <fieldset class = 'mt-4'>
+        <label for='word'> Enter your word </label>
+        <input id='word' type = 'text' />
+        <button id = 'length'>Find the Length</button>
+        <p id = 'result'></p>
+    </fieldset>
 
     <footer>
-
+        This is a footer!
+        Copyright by <a href='matteoatunez.weebly.com'>Matteo Antunez</a> :)
     </footer>
-    <script src="main.js">
-        window.onload=function() {
-            total_num = document.getElementById('total_num');
-            tip_rate = document.getElementById('tip_rate');
-            document.getElementById('Calculate').onclick = calcTip;
-            document.getElementById('Calculate').onclick = calcTotal;
-        }
-        function calcTip() {
-            var total = new Number(total_num.value);
-            var rtip = new Number(tip_rate.value);
-            str.innerHTML = '';
-            str.innerHTML = total * rtip;
-        }
 
-        function calcTotal() {
-            var total = new Number(total_num.value);
-            var rtip = new Number(tip_rate.value);
-            str.innerHTML = '';
-            tip = total * rtip;
-            str.innerHTML = tip + total;
-        }
-    </script>
+    <script src='main.js'></script>
+
 </body>
 
 </html>
